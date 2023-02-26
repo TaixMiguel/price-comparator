@@ -1,0 +1,11 @@
+{
+  "app": {
+    "allowedHosts": [],
+    "debugMode": true,
+    "secretKey": "django-insecure-key"
+  },
+  "bbdd": {
+    "engine": "django.db.backends.sqlite3",
+    "_name": "/config/db.sqlite3"
+  }
+}
