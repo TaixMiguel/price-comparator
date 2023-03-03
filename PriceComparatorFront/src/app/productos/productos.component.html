@@ -1,1 +1,15 @@
-<p>productos works!</p>
+<div class="product-container" *ngFor="let product of productsData">
+  <h3>{{ product.product }}</h3>
+  <p *ngIf="product.description">
+    {{product.description}}
+  </p>
+
+  <div *ngFor="let supermarket of product.supermarkets">
+    <div *ngIf="supermarket.measurement == 'UNIDAD'">
+      Pack({{supermarket.amount}}): {{supermarket.price}}€ | Unidad: {{getPrice(supermarket)}}
+    </div>
+    <div *ngIf="supermarket.measurement == 'PESO'">
+      {{getPrice(supermarket)}}
+    </div>
+  </div>
+</div>
