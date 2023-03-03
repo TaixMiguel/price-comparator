@@ -6,6 +6,7 @@ class Config:
     class Application:
         ROOT: str = 'app'
         ALLOWED_HOSTS: str = 'allowedHosts'
+        CORS_ALLOWED_ORIGINS: str = 'corsAllowedOrigins'
         DEBUG_MODE: str = 'debugMode'
         SECRET_KEY: str = 'secretKey'
 

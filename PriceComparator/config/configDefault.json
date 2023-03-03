@@ -1,6 +1,7 @@
 {
   "app": {
     "allowedHosts": [],
+    "corsAllowedOrigins": ["http://localhost:4200"],
     "debugMode": true,
     "secretKey": "django-insecure-key"
   },
