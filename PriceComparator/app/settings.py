@@ -11,6 +11,8 @@ SECRET_KEY = configApp.get_value(ConfigPrice.Application.ROOT, ConfigPrice.Appli
                                  'django-insecure-key')
 DEBUG = configApp.get_value_boolean(ConfigPrice.Application.ROOT, ConfigPrice.Application.DEBUG_MODE, True)
 ALLOWED_HOSTS = configApp.get_value_array(ConfigPrice.Application.ROOT, ConfigPrice.Application.ALLOWED_HOSTS)
+CORS_ALLOWED_ORIGINS = configApp.get_value_array(ConfigPrice.Application.ROOT,
+                                                 ConfigPrice.Application.CORS_ALLOWED_ORIGINS)
 
 
 # Application definition
@@ -23,9 +25,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api.apps.ApiConfig',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
